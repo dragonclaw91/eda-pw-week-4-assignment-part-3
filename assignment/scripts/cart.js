@@ -4,13 +4,26 @@ console.log('***** Cart Functions *****');
 
 let basket = [];
 
+let maxItems = 5;
 
 
 function addItem(item){
     basket.push(item)
- if(basket.indexOf(item) !== -1){
-        return true}
+    if(basket.indexOf(item) !== -1){
+        console.log(true)
+    }
+    function isFull(basket){
+        if (basket.length < 5){
+            console.log(false)
+        }else if(basket.length >= 5){
+            console.log(true)
+        }
+    }isFull(basket);
 }
+
+   
+    
+
 addItem("apples");
 addItem("plums");
 addItem("oranges");
@@ -30,6 +43,16 @@ function empty(basket){
    return  basket = [];
  }
 }
+
+function removeItem(item){
+    if(basket.indexOf(item) !== -1){
+        basket.splice(item,1)
+    }else if (basket.indexOf(item) === -1){
+        console.log(null);
+    }
+}
+removeItem("aples");
+
 
 
 
